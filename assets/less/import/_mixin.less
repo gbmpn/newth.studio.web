@@ -42,3 +42,96 @@ Hover
 .hover-bg(@color){
   &:hover{background-color: @color;}
 }
+
+/* centering */
+.vert-center(){
+  top: 50%;
+  transform: translateY(-50%);
+}
+.hrz-center(){
+  left: 50%;
+  transform: translateX(-50%);
+}
+.full-center(){
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+/* apect ratio */
+.aspect-ratio(@width, @height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: (@height / @width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    padding:10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    span:before{
+      content:"@{width}";
+    }
+    
+    span:after{
+      content:"@{height}";
+    }
+  }
+}/* .aspect-ratio(); */
+
+
+  .transition(@transition, @easing){
+      -webkit-transition: @transition @easing;
+      -moz-transition: @transition @easing;
+      -ms-transition: @transition @easing;
+      -o-transition: @transition @easing;
+      transition: @transition @easing;
+  }
+  .align-right(){
+    text-align: right;
+    float: right;
+    right: 0;
+  }
+  .align-left(){
+    text-align: left;
+    float: left;
+    left: 0;
+  }
+  .active_underline(@color, @height, @bottom){
+  &:after{
+    content: '';
+    .size(100%, @height);
+    .transition(.3s, @easeInOutExpo);
+    background: @color;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: auto;
+    bottom: @bottom;
+  }
+}
+.fancy_underline(@color, @height, @bottom){
+  &:after{
+    content: '';
+    .size(100%, @height);
+    .transition(.3s, @easeInOutExpo);
+    background: @color;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: auto;
+    bottom: @bottom;
+  }
+  &:hover{
+    &:after{
+      .size(0%, @height);
+      left: auto;
+      right: 0;
+    }
+  }
+}

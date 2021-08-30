@@ -32,6 +32,9 @@ class Default {
         this.a = domselect.all('a', this.page)
         
         biggie.bind.add(this.a)
+
+        var arrayOfElements = document.querySelectorAll('.nav-item');
+        biggie.bind.add(arrayOfElements)
     }
     
     resize(width, height) {

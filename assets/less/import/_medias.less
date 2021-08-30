@@ -7,6 +7,10 @@ Media Queries
 @desktop-xl:  ~"only screen and (min-width: 1129px)";
 @retina:  	  ~"only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5)";
 
+.only-mobile{
+	display: none;
+}
+
 @media @mobile {
 	html{
 		font: 80%/1.5 @font;
@@ -18,6 +22,9 @@ Media Queries
 	.not-mobile{
 		display: none;
 	}
+	.only-mobile{
+		display: block;
+	}
 }
 
 @media @tablet {
@@ -25,10 +32,13 @@ Media Queries
 		font: 90%/1.5 @font;
 	}
 	
-	.device-content{
-		width: 700px;
-	}
+	// .device-content{
+	// 	width: 700px;
+	// }
 	.not-mobile{
+		display: block;
+	}
+	.only-mobile{
 		display: none;
 	}
 }
@@ -37,10 +47,12 @@ Media Queries
 	html{
 		font: 95%/1.5 @font;
 	}
-
-	.device-content{
-		width: 960px;
+	.only-mobile{
+		display: none;
 	}
+	// .device-content{
+	// 	width: 960px;
+	// }
 }
 
 /* -----

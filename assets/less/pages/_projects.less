@@ -1,0 +1,99 @@
+/* -----
+About
+----- */
+.page-projects {
+	.swiper-container {
+      width: 100%;
+      height: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .swiper-slide {
+      background-size: cover;
+      background-position: center;
+    }
+    .gallery-top {
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+      transition: .7s ease;
+      &._rotated{
+      	transform: rotate(-7deg);
+      }
+      &._full{
+        .img-container{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .swiper-slide{
+    		height: auto;
+    		transition: .3s ease;
+      }
+      .img-container{
+      	width: 60%;
+      	overflow: hidden;
+      	position: relative;
+      	margin: 0 auto;
+      	top: 50%;
+      	transform: translateY(-50%);
+        transition: .3s ease;
+        .aspect-ratio(16, 9);
+      	img{
+      		width: 100%;
+      		left: 0;
+      		position: absolute;
+      		top: 50%;
+      		transform: translateY(-50%);
+      	}
+      }
+    }
+    .gallery-thumbs {
+      height: 25%;
+      box-sizing: border-box;
+      padding: 10px 0;
+      position: absolute;
+      bottom:5%;
+      z-index: 2;
+      transform: translateY(200px);
+      transition: .7s ease;
+      pointer-events: none;
+      &._on{
+      	transform: translateY(0);
+      }
+      .ligne{
+        width: 100%;
+        overflow: hidden;
+        height: 100%; 
+        white-space: nowrap;
+        position: relative;
+        p{
+          //left: -100%;
+          transition: .3s ease;
+          animation: marquee_left 120s linear infinite;
+          font-size: 15vmin;
+          line-height: 15vmin;
+          color: transparent;
+          font-weight: 600;
+          -webkit-text-stroke: 1px @white;
+          display: inline-block;
+          position: absolute;
+          left: 0;
+          span{
+            color: @white;
+          }
+        }
+      }
+    }
+    .gallery-thumbs .swiper-slide {
+      width: auto;
+      height: 100%;
+      opacity: 0.4;
+      overflow: visible;
+    }
+    .gallery-thumbs .swiper-slide-thumb-active {
+      opacity: 1;
+     
+    }
+}
+

@@ -1,4 +1,66 @@
 /* -----
 About
 ----- */
-.page-about {}
+.page-about, 
+.page-contact {
+
+	p{
+		text-align: left;
+		font-size: 14px;
+		margin-bottom: 100px;
+		&.big{
+			font-size: 5vw;
+    		line-height: 5vw;
+			color: transparent;
+			-webkit-text-stroke: 1px @black;
+			text-align: left;
+			font-weight: 600;
+			margin: 150px auto 100px;
+			@media @mobile {
+				font-size: 42px;
+	    		line-height: 45px;
+			}
+			span.black{
+				color: @black;
+			}
+		}
+		&.offset-left{
+			span{
+			 margin-left: 15px; 
+			}
+		}
+		
+	}
+	.img-container{
+		margin-top: 100px;
+		width: 90%;
+    	height: 80vh;
+	    display: block;
+	    float: right;
+	    position: relative;
+	    top: 0;
+	    right: 0;
+	    overflow: hidden;
+	    transition: .7s ease;
+	    .aspect-ratio(3, 1.5);
+
+		@media @mobile {
+			width: 100%;
+		}
+	    &._on{
+	    	width: 90%;
+	    }
+	    &.left{
+	    	float: left;
+	    }
+	    &.right{
+	    	float: right;
+	    }
+	    img{
+	    	top: 0;
+	    	height: 120%;
+	    	position: absolute;
+	    	left: 0%;
+	    }
+	}
+}

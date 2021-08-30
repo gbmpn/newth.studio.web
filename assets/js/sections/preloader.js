@@ -36,7 +36,7 @@ class Preloader {
 			html: `
 				<div class="vertical-align">
 					<div class="vertical-align__item">
-						<p>Preloader</p>
+						<p><img src="/static/images/logo.svg" alt="" /></p>
 					</div>
 				</div>
 			`
@@ -63,6 +63,7 @@ class Preloader {
 	}
 	
 	animateOut(req, done) {
+		const pager = document.querySelector(".pager")
 
 		const tl = new TimelineMax({ paused: true, onComplete: done })
 		tl.to(this.el, 1, {autoAlpha: 0})
